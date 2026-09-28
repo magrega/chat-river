@@ -110,6 +110,6 @@ for name, cid, ctype, others, env in CAST:
 
 out = ROOT / 'demo'
 out.mkdir(exist_ok=True)
-json.dump({'about': 'demo', 'chats': {'list': chats}},
-          open(out / 'result.json', 'w'), ensure_ascii=False)
+with open(out / 'result.json', 'w', encoding='utf-8') as f:
+    json.dump({'about': 'demo', 'chats': {'list': chats}}, f, ensure_ascii=False)
 print(f'demo/result.json: {mid - 1} сообщений, {len(chats)} чатов, {DAYS} дней')

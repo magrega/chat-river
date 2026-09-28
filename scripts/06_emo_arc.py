@@ -188,5 +188,5 @@ function tempColor(t){
 </script></body></html>"""
 
 OUT.mkdir(exist_ok=True)
-(OUT / 'emo-arc.html').write_text(page.replace('__DATA__', blob))
+(OUT / 'emo-arc.html').write_text(page.replace('__DATA__', blob), encoding='utf-8')
 print(f'готово: out/emo-arc.html ({N} месяцев, {len(years)} лет)')

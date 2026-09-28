@@ -432,6 +432,6 @@ NUM = {1: 'Один год', 2: 'Два года', 3: 'Три года', 4: 'Ч�
        11: 'Одиннадцать лет', 12: 'Двенадцать лет'}
 years_ru = NUM.get(n_years, f'{n_years} лет')
 (OUT / 'river.html').write_text(page.replace('__DATA__', blob)
-                                    .replace('__YEARS__', years_ru))
+                                    .replace('__YEARS__', years_ru), encoding='utf-8')
 print(f"записан out/river.html ({(OUT/'river.html').stat().st_size/1024:.0f} КБ); "
       f"доп. чатов в селекторе: {len(extra)}; событий: {len(events)}")

@@ -157,6 +157,6 @@ h1{{font-size:25px;margin:0 0 4px}} h2{{font-size:19px;margin:28px 0 2px}}
 Это развлекательное зеркало, а не психодиагностика.</p>
 </div></body></html>"""
 OUT.mkdir(exist_ok=True)
-(OUT / 'big5.html').write_text(html)
+(OUT / 'big5.html').write_text(html, encoding='utf-8')
 print(f"out/big5.html готов (баллы теста: {'есть' if scores else 'нет'}; "
       f"вежливость круг/вне: {inner['polite']}/{outer['polite']})")

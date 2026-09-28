@@ -67,7 +67,7 @@ payload = {'months': months, 'totals': [totals[mm] for mm in months], 'vocab': v
                     'minCount': MIN_COUNT, 'p1': f'{months[0]} — {p1[-1] if p1 else months[0]}',
                     'p2': f'{half} — {months[-1]}', 'buffer': '—', 'examples': EXAMPLES}}
 blob = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
-tpl = (ROOT / 'templates' / 'ngram_template.html').read_text()
+tpl = (ROOT / 'templates' / 'ngram_template.html').read_text(encoding='utf-8')
 OUT.mkdir(exist_ok=True)
-(OUT / 'ngram-viewer.html').write_text(tpl.replace('__DATA__', blob))
+(OUT / 'ngram-viewer.html').write_text(tpl.replace('__DATA__', blob), encoding='utf-8')
 print(f'out/ngram-viewer.html: {len(vocab)} токенов в словаре, {len(months)} месяцев')
